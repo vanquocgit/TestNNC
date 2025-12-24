@@ -1,6 +1,6 @@
 export const CONFIG = {
     colors: { bg: 0x050d1a, fog: 0x050d1a, champagneGold: 0xffd966, deepGreen: 0x03180a, accentRed: 0x990000 },
-    particles: { count: 600, dustCount: 600, snowCount: 200, treeHeight: 24, treeRadius: 8 },
+    particles: { count: 500, dustCount: 600, snowCount: 200, treeHeight: 24, treeRadius: 8 },
     camera: { z: 50 },
     preload: { autoScanLocal: true, scanCount: 52, images: [] }
 };

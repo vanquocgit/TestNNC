@@ -102,8 +102,8 @@ export class Particle {
 }
 
 export function createParticles(clock, THREElib) {
-    const sphereGeo = new THREElib.SphereGeometry(0.5, 32, 32);
-    const boxGeo = new THREElib.BoxGeometry(0.55, 0.55, 0.55);
+    const sphereGeo = new THREElib.SphereGeometry(0.9, 38, 38);
+    const boxGeo = new THREElib.BoxGeometry(0.8, 0.8, 0.8);
     const curve = new THREElib.CatmullRomCurve3([new THREElib.Vector3(0, -0.5, 0), new THREElib.Vector3(0, 0.3, 0), new THREElib.Vector3(0.1, 0.5, 0), new THREElib.Vector3(0.3, 0.4, 0)]);
     const candyGeo = new THREElib.TubeGeometry(curve, 16, 0.08, 8, false);
     const goldMat = new THREElib.MeshStandardMaterial({ color: CONFIG.colors.champagneGold, metalness: 1.0, roughness: 0.1, envMapIntensity: 2.0, emissive: 0x443300, emissiveIntensity: 0.3 });
