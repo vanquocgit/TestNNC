@@ -5,7 +5,7 @@ import { STATE } from './config.js';
 export async function initMediaPipe() {
     if (APP.isCameraRunning) return;
     const camBtn = document.getElementById('cam-btn');
-    camBtn.innerText = "Initializing...";
+    camBtn.innerText = "Đang tải...";
     const debugInfo = document.getElementById('debug-info');
     debugInfo.innerText = "Loading AI models...";
     APP.video = document.getElementById('webcam');
