@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Noel No Cold No.3 End Gift </title>
+
+    <!-- Content Security Policy: allow same-origin and required HTTPS CDNs only
+            Note: MediaPipe WASM may require wasm compilation helpers; include 'wasm-unsafe-eval'.
+            Adding 'unsafe-eval' as a fallback may be necessary for some WASM loaders — this weakens CSP.
+            Consider setting CSP as an HTTP response header from a trusted server for stricter control. -->
+    <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self' https:; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://storage.googleapis.com 'unsafe-inline' 'wasm-unsafe-eval' 'unsafe-eval'; connect-src 'self' https:; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com;">
+
+    <!-- FontAwesome (HTTPS) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- Google Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=3d" />
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Cinzel&family=Mountains+of+Christmas:wght@400;700&display=swap');
+    </style>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+                "@mediapipe/tasks-vision": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/+esm"
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="loader">
+        <div class="spinner"></div>
+        <div class="loader-text">Loading Memories</div>
+    </div>
+
+    <div id="msg-box"></div>
+
+    <!-- Camera consent modal removed per user request -->
+
+
+    <div id="canvas-container"></div>
+
+    <div id="ui-layer">
+        <h1 style="font-family: 'Mountains of Christmas', serif;">Merry Christmas</h1>
+        <div id="mode-bar">
+            <div class="wrap-btn">
+                <div class="control-btn" id="cam-btn" title="Enable Camera"style="border-radius: 103px;min-width: 50px;font-size: 20px;height: 40px;">🖐️</div>
+                <div class="mode-btn" onclick="setMode('INFORM')" title="How to use" style="border-color: inherit; background-color: #d4af37;">ℹ️</div>
+            </div>
+
+            <div class="wrap-btn" >
+                <div class="mode-btn" onclick="setMode('TREE')" title="Tree Mode">🎄</div>
+                <div class="mode-btn" onclick="setMode('SCATTER')" title="Scatter Mode">✨</div>
+                <div class="mode-btn" onclick="setMode('FOCUS_RANDOM')" title="Focus Mode">🔍</div>
+                <div class="mode-btn" title="Focus Mode" style="border-color: inherit;"><a href="https://drive.google.com/drive/folders/1-8Xs7bkepltJkN8fgIyqsAiKv-rVgHmH">🖼️</a></div>
+               
+            </div>
+        </div>
+
+        <div id="footer-stats" class="ui-hidden">
+            <div class="stats-title">WORLDWIDE VISITORS (disabled)</div>
+            <div class="map-container"
+                style="height:100px;background:#000;border-radius:6px;border:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;color:#777;">
+                Map disabled for privacy</div>
+            <div class="stats-row">
+                <div class="stats-item" title="Total Page Views"><i class="fas fa-eye" style="color: #64ffda;"></i><span
+                        class="stats-value">—</span></div>
+                <div class="stats-item" title="Total Visitors"><i class="fas fa-user" style="color: #d4af37;"></i><span
+                        class="stats-value">—</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="webcam-wrapper">
+        <video id="webcam" autoplay playsinline webkit-playsinline></video>
+    </div>
+    <div id="debug-info">Drag to rotate • Tap photo to view</div>
+
+    <script type="module" src="./JS/main.js"></script>
+</body>
+
+</html>
