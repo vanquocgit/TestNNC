@@ -67,7 +67,7 @@ export class Particle {
         let target = (mode === 'SCATTER') ? this.posScatter : this.posTree;
         if (mode === 'FOCUS') {
             if (this.mesh === focusTargetMesh) {
-                const desiredWorldPos = new THREE.Vector3(0, 2, 35);
+                const desiredWorldPos = new THREE.Vector3(-1, 2, 35);
                 const invMatrix = new THREE.Matrix4().copy(mainGroup.matrixWorld).invert();
                 target = desiredWorldPos.applyMatrix4(invMatrix);
             } else target = this.posScatter;
