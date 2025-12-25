@@ -15,6 +15,10 @@ export async function initMediaPipe() {
             baseOptions: { modelAssetPath: `https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task`, delegate: "GPU" },
             runningMode: "VIDEO", numHands: 1
         });
+
+        APP.video.setAttribute('playsinline', ''); APP.video.setAttribute('webkit-playsinline', ''); 
+        APP.video.muted = true; APP.video.playsInline = true;
+        
         const constraints = { video: { facingMode: "user", width: { ideal: 640 }, height: { ideal: 480 } } };
         const stream = await navigator.mediaDevices.getUserMedia(constraints);
         APP.video.srcObject = stream;
